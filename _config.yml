@@ -1,6 +1,11 @@
-title: hermitmaster
+url: 'https://hermitmaster.com'
+baseurl: '/'
 description:
-show_downloads: false
-google_analytics:
-theme: jekyll-theme-hacker
+author: hermitmaster
 
+title: hermitmaster
+
+analytics:
+  google:
+
+markdown: kramdown

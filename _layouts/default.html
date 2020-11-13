@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html>
-  {% include head.html %}
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css'>
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <link rel="shortcut icon" type="image/png" href="{{ '/assets/images/favicon.ico' | absolute_url }}">
+{% seo %}
+  </head>
+
   <body>
-    {% include header.html %}
-    <div class="content">{{ content }}</div>
-    {% include footer.html %}
-    {% include scripts.html %}
+    <header>
+      <div class="container">
+        <nav>
+          <a id="a-title" href="{{ '/' | relative_url }}">{{ site.title | default: site.github.repository_name }}</a>
+          <div class="navlinks">
+            {%- for link in site.nav -%}
+              <a class="nav-link" href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
+          </div>
+        </nav>
+
+        <section id="downloads">
+          {% if site.show_downloads %}
+            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
+            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
+          {% endif %}
+          {% if site.show_repository_link %}
+            <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+          {% endif %}
+        </section>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="container">
+        {{ content }}
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="container">
+        <nav>
+          {% for link in site.contact %}
+            <a href="{{ link.url }}" class="text-light">{{ link.display }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+      <div class="container">
+        Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}
+      </div>
+    </footer>
   </body>
 </html>

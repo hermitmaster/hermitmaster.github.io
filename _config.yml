@@ -1,11 +1,17 @@
-url: 'https://hermitmaster.com'
-baseurl: '/'
-description:
-author: hermitmaster
-
 title: hermitmaster
+description:
+show_downloads: false
+google_analytics:
 
-analytics:
-  google:
-
-markdown: kramdown
+contact:
+  - display: hermitmaster@icloud.com
+    url: mailto:hermitmaster@icloud.com
+  - display: LinkedIn
+    url: https://linkedin.com/in/hermitmaster
+  - display: GitHub
+    url: https://github.com/hermitmaster
+nav:
+  - title: Blog
+    url: /blog.html
+  - title: Resume
+    url: /resume
